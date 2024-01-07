@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root "rooms#index"
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
   devise_scope :user do
     get 'users', to: 'devise/sessions#new'

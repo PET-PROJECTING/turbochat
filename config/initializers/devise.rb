@@ -32,6 +32,10 @@ Devise.setup do |config|
   # config.parent_controller = 'TurboDeviseController' TODO: It raise error due to missing empty? method in User instance. Resolution: https://github.com/scambra/devise_invitable/issues/873
   config.parent_controller = 'ApplicationController'
   config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.omniauth :google_oauth2,
+                  Rails.application.credentials.dig(:google_auth, :client_id),
+                  Rails.application.credentials.dig(:google_auth, :client_secret),
+                  {}
 
   config.warden do |manager|
     manager.failure_app = TurboFailureApp

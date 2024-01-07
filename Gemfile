@@ -67,5 +67,9 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem 'devise-i18n'
 
 gem "pry", "~> 0.14.2"
+
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', '~> 1.0' # https://github.com/heartcombo/devise/issues/5236
