@@ -1,0 +1,44 @@
+<div id="chatroom_container" class="row text-dark">
+  <div id="side_panel" class="d-flex flex-column align-items-stretch flex-shrink-0">
+    <div>
+      <div class="d-flex justify-content-around p-3 text-decoration-none border-bottom fw-semibold">
+        <h3>Contacts</h3>
+        <div class="mx-3"><%= render 'layouts/new_user_form' %></div>
+      </div>
+      <div class="list-group list-group-flush border-bottom scrollarea">
+        <%= turbo_stream_from "users" %>
+        <div id="users">
+          <%= render @users %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="d-flex justify-content-between flex-shrink-0 p-3 text-decoration-none border-bottom fw-semibold mt-xxl-5">
+        <h3>Rooms</h3>
+        <div class="mx-3"><%= render 'layouts/new_room_form' %></div>
+      </div>
+      <div class="list-group list-group-flush border-bottom scrollarea">
+        <%= turbo_stream_from "rooms" %>
+        <div id="rooms">
+          <%= render @rooms %>
+        </div>
+      </div>
+    </div>
+  <br />
+
+  <%= render 'layouts/new_room_form' %>
+  </div>
+
+  <div id="room_container" class="col-md-8 col-sm-8 text-light">
+    <% if @single_room %>
+      <div id='single_room'>
+        <h4 class="text-center"><%= @user&.email || @single_room.name %></h4>
+        <%= turbo_stream_from @single_room %>
+        <div id="messages">
+          <%= render @messages %>
+        </div>
+        <%= render 'layouts/new_message_form' %>
+      </div>
+    <% end %>
+  </div>
+</div>
