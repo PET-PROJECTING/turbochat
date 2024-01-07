@@ -30,7 +30,7 @@ body {
 #single_room {
   height: calc(100vh - 150px);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #room_container {
@@ -43,7 +43,7 @@ body {
   height: 100vh;
   width: 25vw;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #chatroom_container {
