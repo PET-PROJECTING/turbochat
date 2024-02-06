@@ -50,6 +50,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "database_cleaner"
+  gem "simplecov"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
