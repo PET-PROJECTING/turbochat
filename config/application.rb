@@ -1,5 +1,6 @@
 require_relative "boot"
 
+require "factory_bot_rails"
 require "rails/all"
 require "pry"
 # Require the gems listed in Gemfile, including any gems
@@ -23,5 +24,7 @@ module Turbochat
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.factory_bot.definition_file_paths = ["#{Rails.application.root}/spec/factories"] # loading factories
   end
 end
